@@ -19,8 +19,39 @@ const Header = (props: Props) => {
         bgColor="transparent"
         target="_blank"
       /> */}
-      <motion.h2>DhammaDevs</motion.h2>
-      <div className="flex flex-flex-row items-center cursor-pointer">
+      <motion.h2
+        initial={{
+          x: -500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.7,
+        }}
+      >
+        DhammaDevs
+      </motion.h2>
+      <motion.div
+        initial={{
+          x: 500,
+          opacity: 0,
+          scale: 0.5,
+        }}
+        animate={{
+          x: 0,
+          opacity: 1,
+          scale: 1,
+        }}
+        transition={{
+          duration: 1.4,
+        }}
+        className="flex flex-flex-row items-center cursor-pointer"
+      >
         {/* <FontAwesomeIcon
           icon={faBars}
           style={{ fontSize: 25, color: "grey" }}
@@ -33,7 +64,7 @@ const Header = (props: Props) => {
           projects
         </h3>
         <h3 className="hidden md:inline-flex text-sm text-gray-400">contact</h3>
-      </div>
+      </motion.div>
     </header>
   );
 };
