@@ -28,6 +28,10 @@ body {
 .line {
   width: 80%;
   border-bottom: 2px solid white;
+  &-top {
+    border-bottom: none;
+    border-top: 2px solid white;
+  }
 }
 
 .box {
@@ -46,8 +50,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   position: relative;
-  height: 200px;
-  margin-top: 1rem;
+  margin: 2rem 0;
   .marquee-content {
     width: 300%;
     display: flex;

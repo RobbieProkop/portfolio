@@ -59,6 +59,7 @@ const Hero = (props: Props) => {
             </ul>
           </div>
         </div>
+        <div className="line"></div>
       </motion.div>
     </>
   );
