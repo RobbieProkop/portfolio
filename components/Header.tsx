@@ -31,6 +31,7 @@ const Header = (props: Props) => {
           scale: 1,
         }}
         transition={{
+          delay: 4,
           duration: 1.7,
           type: "spring",
         }}
@@ -49,6 +50,7 @@ const Header = (props: Props) => {
           scale: 1,
         }}
         transition={{
+          delay: 4,
           duration: 1.4,
         }}
         className="flex flex-flex-row items-center cursor-pointer"
