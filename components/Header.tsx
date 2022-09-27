@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHamburger, faBars } from "@fortawesome/free-solid-svg-icons";
 import { SocialIcon } from "react-social-icons";
+import { motion } from "framer-motion";
+
 type Props = {};
 const Header = (props: Props) => {
   return (
@@ -17,7 +19,7 @@ const Header = (props: Props) => {
         bgColor="transparent"
         target="_blank"
       /> */}
-      <h2>DhammaDevs</h2>
+      <motion.h2>DhammaDevs</motion.h2>
       <div className="flex flex-flex-row items-center cursor-pointer">
         {/* <FontAwesomeIcon
           icon={faBars}
