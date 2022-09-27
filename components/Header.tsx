@@ -19,7 +19,7 @@ const Header = (props: Props) => {
         bgColor="transparent"
         target="_blank"
       /> */}
-      <motion.h2
+      <motion.h3
         initial={{
           x: -500,
           opacity: 0,
@@ -37,7 +37,7 @@ const Header = (props: Props) => {
         }}
       >
         DhammaDevs
-      </motion.h2>
+      </motion.h3>
       <motion.div
         initial={{
           x: 500,

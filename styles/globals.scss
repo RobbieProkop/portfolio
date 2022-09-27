@@ -42,34 +42,31 @@ body {
 
 //for marquee text
 .marquee {
-  width: 600px;
+  width: 80%;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
-  height: 30px;
-
-  // &:before, &:after {
-  //   position: absolute;
-  //   width: 50px;
-  //   height: 30px;
-  //   content:"";
-  //   z-index: 1;
-  // }
+  height: 200px;
+  margin-top: 1rem;
   .marquee-content {
-    width: 300% !important;
+    width: 300%;
     display: flex;
     line-height: 30px;
-    animation: marquee 10s linear infinite forwards;
+
+    animation: marquee 15s linear infinite forwards;
     &:hover {
       animation-play-state: paused;
     }
-  }
-  .list {
-    display: flex;
-    justify-content: space-around;
-    width: 33.33%;
+    .list {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
 
-    list-style: none;
+      list-style: none;
+    }
+  }
+  .marquee-reverse {
+    animation: marquee 10s linear infinite backwards;
   }
 }
 
@@ -82,7 +79,8 @@ body {
   }
 }
 @media (min-width: 400px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 4rem;
     margin: 1rem 0;
   }
