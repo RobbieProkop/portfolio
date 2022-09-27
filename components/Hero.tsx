@@ -36,9 +36,29 @@ const Hero = (props: Props) => {
         }}
         className="name  flex flex-col justify-center items-center"
       >
-        <motion.div className="line"></motion.div>
-        <h1 className="">Hi, I'm Robbie</h1>
         <div className="line"></div>
+        <h1 className="">Hi, I'm Robbie</h1>
+
+        <div className="line"></div>
+        <div className="marquee mx-auto w-6xl">
+          <div className="marquee-content">
+            <ul className="list">
+              <h2>Frontend</h2>
+              <h2>Backend</h2>
+              <h2>Full-Stack</h2>
+            </ul>
+            <ul className="list">
+              <h2>Frontend</h2>
+              <h2>Backend</h2>
+              <h2>Full-Stack</h2>
+            </ul>
+            <ul className="list">
+              <h2>Frontend</h2>
+              <h2>Backend</h2>
+              <h2>Full-Stack</h2>
+            </ul>
+          </div>
+        </div>
       </motion.div>
     </>
   );

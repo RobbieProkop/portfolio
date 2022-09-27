@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "bluuNext", sans-serif;
 }
@@ -32,6 +38,48 @@ body {
 
 .name {
   top: 0;
+}
+
+//for marquee text
+.marquee {
+  width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+
+  // &:before, &:after {
+  //   position: absolute;
+  //   width: 50px;
+  //   height: 30px;
+  //   content:"";
+  //   z-index: 1;
+  // }
+  .marquee-content {
+    width: 300% !important;
+    display: flex;
+    line-height: 30px;
+    animation: marquee 10s linear infinite forwards;
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+  .list {
+    display: flex;
+    justify-content: space-around;
+    width: 33.33%;
+
+    list-style: none;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-66.6%);
+  }
 }
 @media (min-width: 400px) {
   h1 {
