@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "bluuNext", sans-serif;
+}
+
+@font-face {
+  font-family: "bluuNext";
+  src: url("../asset/bluuNext/bluunext-bolditalic.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "bluuNext";
+  src: url("../asset/bluuNext/bluunext-bold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@media (min-width: 400px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+@media (min-width: 797px) {
+  h1 {
+    font-size: 8rem;
+  }
+}
+@media (min-width: 950px) {
+  h1 {
+    font-size: 10rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}

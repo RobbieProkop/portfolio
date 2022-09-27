@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 type Props = {};
 const Header = (props: Props) => {
   return (
-    <header className="px-5 flex justify-between sticky top-0 max-w-7xl mx-auto z-20">
+    <header className="py-5 flex justify-between sticky top-0 max-w-7xl mx-auto z-20">
       {/* <SocialIcon
         url="https://www.linkedin.com/in/robbie-prokop-1a968a230/"
         fgColor="gray"
@@ -32,6 +32,7 @@ const Header = (props: Props) => {
         }}
         transition={{
           duration: 1.7,
+          type: "spring",
         }}
       >
         DhammaDevs
