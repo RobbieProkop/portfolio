@@ -19,9 +19,11 @@ const Hero = (props: Props) => {
         duration: 4.5,
         type: "spring",
       }}
-      className="h-screen flex justify-center items-center"
+      className="h-screen flex flex-col justify-center items-center"
     >
+      <div className="line"></div>
       <h1 className="">Hi I'm Robbie</h1>
+      <div className="line"></div>
     </motion.div>
   );
 };

@@ -19,9 +19,15 @@ body {
   font-style: normal;
 }
 
+.line {
+  width: 80%;
+  border-bottom: 2px solid white;
+}
+
 @media (min-width: 400px) {
   h1 {
     font-size: 4rem;
+    margin: 1rem 0;
   }
 }
 @media (min-width: 600px) {
