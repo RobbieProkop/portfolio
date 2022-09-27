@@ -15,6 +15,7 @@ interface ParallaxProps {
   baseVelocity: number;
 }
 
+// this comes from a code pen https://codesandbox.io/s/framer-motion-scroll-velocity-r1dy4u?from-embed=&file=/src/styles.css:2516-2898
 const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
