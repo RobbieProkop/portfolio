@@ -70,7 +70,7 @@ const Hero = (props: Props) => {
     // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
     <div className="h-screen">
       {/* <BackgroundCircles /> */}
-      <motion.div
+      {/* <motion.div
         initial={{
           scale: 0,
           opacity: 0,
@@ -86,8 +86,8 @@ const Hero = (props: Props) => {
           ease: "easeInOut",
           times: [0, 0.2, 0.5, 0.8, 1],
         }}
-        className="box flex items-center justify-center mx-auto"
-      />
+        className="box flex items-center justify-center mx-auto z-25 top-0"
+      /> */}
       <motion.div
         initial={{
           opacity: 0,
@@ -100,7 +100,7 @@ const Hero = (props: Props) => {
           delay: 2,
           duration: 2,
         }}
-        className="name  flex flex-col justify-center items-center"
+        className="name  flex flex-col justify-center items-center z-1"
       >
         <div className="line animate:pulse"></div>
         <h1 className="">Hi, I'm Robbie</h1>

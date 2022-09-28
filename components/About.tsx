@@ -24,6 +24,7 @@ const About = (props: Props) => {
         viewport={{ once: true }} // used only if want to happen once
         transition={{
           duration: 1.2,
+          type: "spring",
         }}
         className="relative mb-7 mt-7 md:mb-0 flex-shrink-0 w-56 h-56 md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]"
       >
