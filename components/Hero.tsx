@@ -67,8 +67,9 @@ const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
 type Props = {};
 const Hero = (props: Props) => {
   return (
-    <>
-      <BackgroundCircles />
+    // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
+    <div className="">
+      {/* <BackgroundCircles /> */}
       <motion.div
         initial={{
           scale: 0,
@@ -131,7 +132,7 @@ const Hero = (props: Props) => {
         </div> */}
         <div className="line"></div>
       </motion.div>
-    </>
+    </div>
   );
 };
 // <motion.div
