@@ -26,13 +26,21 @@ const Home: NextPage = () => {
         <About />
       </section>
       {/* Experience */}
-      <Experience />
+      <section id="experience" className="snap-center">
+        <Experience />
+      </section>
       {/* Skills */}
-      <Skills />
+      <section id="skills" className="snap-center">
+        <Skills />
+      </section>
       {/* Projects */}
-      <Projects />
+      <section id="projects" className="snap-center">
+        <Projects />
+      </section>
       {/* COntact */}
-      <Contact />
+      <section id="contact" className="snap-center">
+        <Contact />
+      </section>
       {/* Footer */}
       <Footer />
     </div>
