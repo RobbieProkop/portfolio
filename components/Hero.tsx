@@ -101,7 +101,7 @@ const Hero = (props: Props) => {
         }}
         className="name  flex flex-col justify-center items-center"
       >
-        <div className="line"></div>
+        <div className="line animate:pulse"></div>
         <h1 className="">Hi, I'm Robbie</h1>
 
         <div className="line"></div>
