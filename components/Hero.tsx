@@ -68,7 +68,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
-    <div className="">
+    <div className="h-screen">
       {/* <BackgroundCircles /> */}
       <motion.div
         initial={{
