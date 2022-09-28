@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
 import { useRef } from "react";
+import BackgroundCircles from "./BackgroundCircles";
 
 interface ParallaxProps {
   children: string;
@@ -67,6 +68,7 @@ type Props = {};
 const Hero = (props: Props) => {
   return (
     <>
+      <BackgroundCircles />
       <motion.div
         initial={{
           scale: 0,
