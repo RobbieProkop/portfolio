@@ -110,26 +110,6 @@ const Hero = (props: Props) => {
         <ParallaxText baseVelocity={5}>
           Frontend-Backend-FullStack-
         </ParallaxText>
-
-        {/* <div className="marquee mx-auto w-6xl">
-          <div className="marquee-content">
-            <ul className="list">
-              <h2>Frontend</h2>
-              <h2>Backend</h2>
-              <h2>Full-Stack</h2>
-            </ul>
-            <ul className="list">
-              <h2>Frontend</h2>
-              <h2>Backend</h2>
-              <h2>Full-Stack</h2>
-            </ul>
-            <ul className="list">
-              <h2>Frontend</h2>
-              <h2>Backend</h2>
-              <h2>Full-Stack</h2>
-            </ul>
-          </div>
-        </div> */}
         <div className="line"></div>
       </motion.div>
     </div>
