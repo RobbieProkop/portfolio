@@ -51,11 +51,9 @@ const ExpCard = (props: Props) => {
           Started June 2022 - PRESENT
         </p>
         <ul className="list-disc space-y-3 ml-5 text-lg">
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
-          <li>Summary</li>
+          <li>Lead developer for DhammaDevs</li>
+          <li>Built fullstack and static websites</li>
+          <li>Consulted with clients</li>
         </ul>
       </div>
     </motion.article>
