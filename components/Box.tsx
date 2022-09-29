@@ -4,15 +4,15 @@ type Props = {};
 const Box = (props: Props) => {
   return (
     <motion.div
-      initial={{
-        y: 0,
-      }}
-      animate={{
-        y: -500,
-      }}
-      transition={{
-        duration: 3,
-      }}
+      // initial={{
+      //   y: 0,
+      // }}
+      // animate={{
+      //   y: -500,
+      // }}
+      // transition={{
+      //   duration: 3,
+      // }}
       className=" flex items-center justify-center"
     >
       <motion.div

@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Box />
+      {/* <Box /> */}
       {/* hero */}
       <section id="hero" className="snap-start">
         <Hero />

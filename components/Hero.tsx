@@ -10,6 +10,7 @@ import {
 import { wrap } from "@motionone/utils";
 import { useRef } from "react";
 import BackgroundCircles from "./BackgroundCircles";
+import Box from "./Box";
 
 interface ParallaxProps {
   children: string;
@@ -88,26 +89,32 @@ const Hero = (props: Props) => {
         }}
         className="box flex items-center justify-center mx-auto z-25 top-0"
       /> */}
+      <div className="absolute w-full mt-10">
+        <div className="flex items-center justify-center h-full">
+          <Box />
+        </div>
+      </div>
       <motion.div
         initial={{
           opacity: 0,
+          y: 200,
         }}
         animate={{
-          y: -200,
+          y: 0,
           opacity: 1,
         }}
         transition={{
-          delay: 2,
+          delay: 3.5,
           duration: 2,
         }}
-        className="name  flex flex-col justify-center items-center z-1"
+        className="name  flex flex-col justify-center items-center z-1 mt-10"
       >
         <div className="line animate:pulse"></div>
         <h1 className="">Hi, I'm Robbie</h1>
 
         <div className="line"></div>
 
-        <ParallaxText baseVelocity={5}>
+        <ParallaxText baseVelocity={-5}>
           Frontend-Backend-FullStack-
         </ParallaxText>
         <div className="line"></div>
