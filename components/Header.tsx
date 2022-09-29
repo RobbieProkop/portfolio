@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 type Props = {};
 const Header = (props: Props) => {
   return (
-    <header className="py-5 flex justify-between sticky top-0 max-w-7xl mx-auto z-20 text-gray-400 ">
+    <header className="p-5 flex justify-between sticky top-0 max-w-7xl mx-auto z-20 text-gray-400 ">
       {/* <SocialIcon
         url="https://www.linkedin.com/in/robbie-prokop-1a968a230/"
         fgColor="gray"
