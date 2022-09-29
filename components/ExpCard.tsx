@@ -9,7 +9,7 @@ const ExpCard = (props: Props) => {
       initial={{ y: 0 }}
       whileHover={{ y: -50 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[450px] bg-[#292929] px-6 py-8 opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden mt-20"
+      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[450px] bg-[#292929] px-6 py-8 opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
       <motion.div
         initial={{ y: -100, opacity: 0 }}
