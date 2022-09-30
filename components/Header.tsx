@@ -61,23 +61,21 @@ const Header = (props: Props) => {
       >
         {/* <FontAwesomeIcon
           icon={faBars}
+          size="lg"
           style={{ fontSize: 25, color: "grey" }}
           className="sm:inline-flex md:hidden "
         /> */}
         <Link href="#about">
-          <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white">
-            about
-          </h3>
+          {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
+          <h3 className=" text-sm  pr-3 hover:text-white">about</h3>
         </Link>
         <Link href="#projects">
-          <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white transition-colors">
+          <h3 className=" text-sm  pr-3 hover:text-white transition-colors">
             projects
           </h3>
         </Link>
         <Link href="#contact">
-          <h3 className="hidden md:inline-flex text-sm hover:text-white">
-            contact
-          </h3>
+          <h3 className=" text-sm hover:text-white">contact</h3>
         </Link>
       </motion.div>
     </header>
