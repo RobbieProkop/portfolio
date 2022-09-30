@@ -10,32 +10,18 @@ export default {
       type: "string",
     },
     {
-      name: "companyImage",
-      title: "CompanyImage",
+      name: "image",
+      title: "Image",
       type: "image",
       options: { hotspot: true },
     },
-    { name: "comapany", title: "Comapany", type: "text" },
-    {
-      name: "dateStarted",
-      title: "DateStarted",
-      type: "date",
-    },
-    {
-      name: "dateEnded",
-      title: "DateEnded",
-      type: "date",
-    },
-    {
-      name: "isCurrentlyWorkingHere",
-      title: "IsCurrentlyWorkingHere",
-      type: "boolean",
-    },
+    { name: "summary", title: "Summary", type: "text" },
     {
       name: "technologies",
       title: "Technologies",
       type: "array",
       of: [{ type: "reference", to: { type: "skill" } }],
     },
+    { name: "linkToBuild", title: "LinkToBuild", type: "url" },
   ],
 };
