@@ -41,13 +41,18 @@ const Contact = (props: Props) => {
 
         <form className="flex flex-col space-y-2 w-fit mx-auto">
           <div className="fle space-x-2">
-            <input className="contactInput" type="text" />
-            <input className="contactInput" type="text" />
+            <input placeholder="Name" className="contactInput" type="text" />
+            <input placeholder="Email" className="contactInput" type="email" />
           </div>
 
-          <input className="contactInput" type="text" />
-          <textarea className="contactInput" />
-          <button>Submit</button>
+          <input placeholder="Subject" className="contactInput" type="text" />
+          <textarea placeholder="Message" className="contactInput" />
+          <button
+            type="submit"
+            className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg"
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
