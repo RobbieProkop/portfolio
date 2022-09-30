@@ -105,6 +105,10 @@ body {
 //     transform: translateX(-66.6%);
 //   }
 // }
+
+.contactInput {
+  @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-green-600/40 focus:text-green-600/40 hover:border-green-600/40;
+}
 @media (min-width: 400px) {
   h1,
   h2 {

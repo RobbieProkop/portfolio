@@ -40,7 +40,7 @@ const Contact = (props: Props) => {
         </div>
 
         <form className="flex flex-col space-y-2 w-fit mx-auto">
-          <div className="flex">
+          <div className="fle space-x-2">
             <input className="contactInput" type="text" />
             <input className="contactInput" type="text" />
           </div>
