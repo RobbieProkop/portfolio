@@ -4,9 +4,21 @@ import {
   faPhone,
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type Inputs = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 type Props = {};
 const Contact = (props: Props) => {
+  const { register, handleSubmit } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
+
   return (
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center">
       <h3 className="absolute top-0 uppercase tracking-[20px] text-gray-500 text-2xl mb-5">
@@ -39,14 +51,36 @@ const Contact = (props: Props) => {
           </div>
         </div>
 
-        <form className="flex flex-col space-y-2 w-fit mx-auto">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col space-y-2 w-fit mx-auto"
+        >
           <div className="fle space-x-2">
-            <input placeholder="Name" className="contactInput" type="text" />
-            <input placeholder="Email" className="contactInput" type="email" />
+            <input
+              {...register("name")}
+              placeholder="Name"
+              className="contactInput"
+              type="text"
+            />
+            <input
+              {...register("email")}
+              placeholder="Email"
+              className="contactInput"
+              type="email"
+            />
           </div>
 
-          <input placeholder="Subject" className="contactInput" type="text" />
-          <textarea placeholder="Message" className="contactInput" />
+          <input
+            {...register("subject")}
+            placeholder="Subject"
+            className="contactInput"
+            type="text"
+          />
+          <textarea
+            {...register("message")}
+            placeholder="Message"
+            className="contactInput"
+          />
           <button
             type="submit"
             className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg"
