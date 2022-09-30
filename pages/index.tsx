@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import About from "../components/About";
-import Box from "../components/Box";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Footer from "../components/Footer";
@@ -12,7 +11,7 @@ import Skills from "../components/Skills";
 
 const Home: NextPage = () => {
   return (
-    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0 overflow-y-scroll overflow-x-hidden">
+    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0 overflow-hidden">
       <Head>
         <title>DhammaDevs</title>
         <meta name="description" content="Portfolio for Robbie Prokop" />
