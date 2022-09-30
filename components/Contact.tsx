@@ -20,7 +20,7 @@ const Contact = (props: Props) => {
   const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center">
+    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center top-24">
       <h3 className="absolute top-0 uppercase tracking-[20px] text-gray-500 text-2xl mb-5">
         Contact
       </h3>
