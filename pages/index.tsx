@@ -12,7 +12,7 @@ import Skills from "../components/Skills";
 
 const Home: NextPage = () => {
   return (
-    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0">
+    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0 overflow-y-scroll overflow-x-hidden">
       <Head>
         <title>DhammaDevs</title>
         <meta name="description" content="Portfolio for Robbie Prokop" />
