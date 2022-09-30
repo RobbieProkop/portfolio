@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCoffee,
+  faPhone,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Props = {};
 const Contact = (props: Props) => {
@@ -10,14 +14,29 @@ const Contact = (props: Props) => {
       </h3>
 
       <div className="flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
-          You aren't going to be disapointed,{" "}
+        <h4 className="text-4xl font-semibold text-center items-center flex flex-col">
+          You aren't going to be disapointed,
           <span className="underline declaration-green-600/50">Let's Talk</span>
         </h4>
 
-        <div>
+        <div className="space-y-10">
           {/* Icons */}
-          <FontAwesomeIcon icon={faCoffee} />
+          <div className="flex items-center justify-center space-x-5">
+            <FontAwesomeIcon
+              icon={faPhone}
+              className="text-green-600/70 animate-pulse"
+              size="lg"
+            />
+            <p className="text-2xl">+1-859-666-4244</p>
+          </div>
+          <div className="flex items-center justify-center space-x-5">
+            <FontAwesomeIcon
+              icon={faEnvelope}
+              className="text-green-600/70 animate-pulse"
+              size="lg"
+            />
+            <p className="text-2xl">robbieprokop@pm.me</p>
+          </div>
         </div>
       </div>
     </div>
