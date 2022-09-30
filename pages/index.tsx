@@ -9,9 +9,14 @@ import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 
+import Link from "next/link";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
+
 const Home: NextPage = () => {
   return (
-    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0 overflow-hidden">
+    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0  ">
       <Head>
         <title>DhammaDevs</title>
         <meta name="description" content="Portfolio for Robbie Prokop" />
@@ -43,7 +48,18 @@ const Home: NextPage = () => {
         <Contact />
       </section>
 
-      {/* <Footer /> */}
+      <Link href="#hero">
+        <div className="sticky bottom-5 w-full cursor-pointer">
+          <div className="flex items-center justify-end pr-5">
+            <FontAwesomeIcon
+              icon={faAngleDoubleUp}
+              size="lg"
+              className="rounded-full bg-gray-500 p-4 hover:animate-pulse hover:p-5 transition-all duration-500 "
+            />
+          </div>
+        </div>
+      </Link>
+      <Footer />
     </div>
   );
 };

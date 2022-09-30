@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHamburger, faBars } from "@fortawesome/free-solid-svg-icons";
+
 import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 
@@ -8,18 +7,6 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <header className="p-5 flex justify-between sticky top-0 max-w-7xl mx-auto z-20 text-gray-400 ">
-      {/* <SocialIcon
-        url="https://www.linkedin.com/in/robbie-prokop-1a968a230/"
-        fgColor="gray"
-        bgColor="transparent"
-        target="_blank"
-      /> */}
-      {/* <SocialIcon
-        url="https://www.github.com/robbieprokop"
-        fgColor="gray"
-        bgColor="transparent"
-        target="_blank"
-      /> */}
       <Link href="#hero">
         <motion.h3
           initial={{

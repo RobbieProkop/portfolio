@@ -14,7 +14,7 @@ const Skills = (props: Props) => {
         Skills
       </h3>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-4 gap-3">
         <Skill />
         <Skill />
         <Skill />
