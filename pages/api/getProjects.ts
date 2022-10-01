@@ -2,20 +2,23 @@
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import { groq } from "next-sanity";
-import { Social } from "../../typings";
+import { Project } from "../../typings";
 import { sanityClient } from "./sanity";
 
 const query = groq`
-  *[_type == "social"]
+  *[_type == "project"] {
+    ...,
+    technologies[] ->
+  }
 `;
 
 type Data = {
-  socials: Social[];
+  projects: Project[];
 };
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const socials: Social[] = await sanityClient.fetch(query);
-  res.status(200).json({ socials });
+  const projects: Project[] = await sanityClient.fetch(query);
+  res.status(200).json({ projects });
 }
