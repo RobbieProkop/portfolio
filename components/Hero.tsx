@@ -11,6 +11,7 @@ import { wrap } from "@motionone/utils";
 import { useRef } from "react";
 import BackgroundCircles from "./BackgroundCircles";
 import Box from "./Box";
+import { PageInfo } from "../typings";
 
 interface ParallaxProps {
   children: string;
@@ -65,8 +66,11 @@ const ParallaxText = ({ children, baseVelocity = 100 }: ParallaxProps) => {
     </div>
   );
 };
-type Props = {};
-const Hero = (props: Props) => {
+type Props = {
+  pageInfo: PageInfo;
+};
+const Hero = ({ pageInfo }: Props) => {
+  const words = [``];
   return (
     // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
     <div className="h-screen top-0 z-1">
@@ -110,7 +114,7 @@ const Hero = (props: Props) => {
         className="name h-full flex flex-col justify-center items-center"
       >
         <div className="line animate:pulse"></div>
-        <h1 className="">Hi, I'm Robbie</h1>
+        <h1>Hi, I'm {pageInfo?.name}</h1>
 
         <div className="line"></div>
 
