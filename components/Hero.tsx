@@ -118,9 +118,7 @@ const Hero = ({ pageInfo }: Props) => {
 
         <div className="line"></div>
 
-        <ParallaxText baseVelocity={-5}>
-          Frontend-Backend-FullStack-
-        </ParallaxText>
+        <ParallaxText baseVelocity={-5}>{pageInfo?.role}</ParallaxText>
         <div className="line"></div>
       </motion.div>
     </div>
