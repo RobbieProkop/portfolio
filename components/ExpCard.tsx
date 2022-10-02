@@ -1,9 +1,27 @@
 import Image from "next/image";
 import monk from "../asset/images/monk.jpeg";
 import { motion } from "framer-motion";
+import { Experience } from "../typings";
+import sanityClient from "@sanity/client";
+import { useNextSanityImage } from "next-sanity-image";
 
-type Props = {};
-const ExpCard = (props: Props) => {
+type Props = {
+  experience: Experience;
+};
+
+//for next-image from sanity
+const configuredSanityClient = sanityClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+});
+
+const ExpCard = ({ experience }: Props) => {
+  const imageProps = useNextSanityImage(
+    configuredSanityClient,
+    experience?.companyImage
+  );
+
   return (
     <motion.article
       initial={{ y: 0 }}
@@ -19,36 +37,32 @@ const ExpCard = (props: Props) => {
         className="h-32 w-32 xl:w-[150px] xl:h-[150px]"
       >
         <Image
-          src={monk}
-          objectFit="cover"
+          {...imageProps}
+          objectFit="contain"
           objectPosition="center"
           className="rounded-full"
         />
       </motion.div>
       <div className="px-0 md:px-8">
-        <h4 className="text-4xl font-light">CEO of DhammaDevs</h4>
-        <p className="font-bold text-2xl my-1">DhammaDevs</p>
+        <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
+        <p className="font-bold text-2xl my-1">{experience?.company}</p>
         <div className="flex space-x-2 ">
-          <div className="h-10 w-10">
-            <Image src={monk} className="rounded-full" />
-          </div>
-          <div className="h-10 w-10">
-            <Image src={monk} className="rounded-full" />
-          </div>
-          <div className="h-10 w-10">
-            <Image src={monk} className="rounded-full" />
-          </div>
-          <div className="h-10 w-10">
-            <Image src={monk} className="rounded-full" />
-          </div>
-          {/* Tech Stacks */}
-          {/* Tech Stacks */}
-          {/* Tech Stacks */}
-          {/* Tech Stacks */}
+          {experience.technologies.map((tech) => {
+            const techProps = useNextSanityImage(
+              configuredSanityClient,
+              tech.image
+            );
+            return (
+              <div key={tech._id} className="h-10 w-10">
+                <Image {...techProps} className="rounded-full" />
+              </div>
+            );
+          })}
         </div>
         <p className="uppercase py-3 text-gray-300">
           {/* dates */}
-          Started June 2022 - PRESENT
+          Started {experience.dateStarted} -{" "}
+          {experience.dateEnded ? experience.dateEnded : `PRESENT`}
         </p>
         <ul className="list-disc space-y-3 ml-5 text-lg">
           <li>Lead developer for DhammaDevs</li>
