@@ -1,9 +1,24 @@
 import Image from "next/image";
-import headshot from "../asset/images/headshot.jpg";
 import { motion } from "framer-motion";
+import { PageInfo } from "../typings";
+import { urlFor } from "../pages/api/sanity";
+import sanityClient from "@sanity/client";
+import { useNextSanityImage } from "next-sanity-image";
 
-type Props = {};
-const About = (props: Props) => {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+const configuredSanityClient = sanityClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+});
+const About = ({ pageInfo }: Props) => {
+  const imageProps = useNextSanityImage(
+    configuredSanityClient,
+    pageInfo?.profilePic
+  );
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -26,12 +41,12 @@ const About = (props: Props) => {
           duration: 1.2,
           type: "spring",
         }}
-        className="relative mb-7 mt-7 md:mb-0 flex-shrink-0 w-56 h-56 md:w-64 md:h-96 xl:w-[400px] xl:h-[500px]"
+        className="relative mb-7 mt-7 md:mb-0 flex-shrink-0 w-56 h-56 md:w-96 md:h-96 xl:w-[500px] xl:h-[500px]"
       >
         <Image
-          src={headshot}
-          layout="fill"
-          objectFit="cover"
+          {...imageProps}
+          // layout="fill"
+          // objectFit="cover"
           className="rounded-full md:rounded-lg"
         />
       </motion.div>
@@ -39,20 +54,7 @@ const About = (props: Props) => {
       <div className="space-y px-0 md:px-10">
         <h4 className="text-4xl mb-3 font-semibold">Who am I?</h4>
 
-        <p className="text-base">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum, maiores
-          rem. Voluptatibus reiciendis quos vero quae, laudantium quisquam
-          voluptate beatae, explicabo a sit, tempora illo commodi illum eveniet.
-          Et nostrum totam nobis delectus nisi, mollitia, aliquam expedita
-          doloribus saepe aperiam unde voluptate excepturi iure magnam
-          consectetur? Illo, ab voluptate. Deleniti mollitia voluptas inventore
-          consequatur nam consequuntur neque eaque officiis perferendis fugiat
-          odio velit excepturi accusamus nostrum repudiandae dolorum, culpa
-          laudantium perspiciatis. Nisi rem asperiores exercitationem
-          consequuntur corrupti a blanditiis aut ab tenetur reprehenderit
-          suscipit enim ea eum officiis placeat aliquid, quidem similique
-          explicabo minus commodi atque temporibus illo eveniet. Officiis.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );

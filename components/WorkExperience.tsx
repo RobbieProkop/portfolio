@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { Experience } from "../typings";
 import ExpCard from "./ExpCard";
 
-type Props = {};
-const WorkExperience = (props: Props) => {
+type Props = {
+  experiences: Experience[];
+};
+const WorkExperience = ({ experiences }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
