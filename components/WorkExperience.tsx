@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ExpCard from "./ExpCard";
 
 type Props = {};
-const Experience = (props: Props) => {
+const WorkExperience = (props: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,4 +23,4 @@ const Experience = (props: Props) => {
     </motion.div>
   );
 };
-export default Experience;
+export default WorkExperience;

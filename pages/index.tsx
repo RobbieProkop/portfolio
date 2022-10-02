@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
+import type { GetStaticProps } from "next";
 import Head from "next/head";
 import About from "../components/About";
 import Contact from "../components/Contact";
-import Experience from "../components/Experience";
+import WorkExperience from "../components/WorkExperience";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -13,8 +13,22 @@ import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleUp } from "@fortawesome/free-solid-svg-icons";
+import { PageInfo, Project, Skill, Social, Experience } from "../typings";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchExperiences } from "../utils/fetchExperiences";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchProjects } from "../utils/fetchProjects";
+import { fetchSocials } from "../utils/fetchSocials";
 
-const Home: NextPage = () => {
+type Props = {
+  pageInfo: PageInfo;
+  experiences: Experience[];
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+};
+
+const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0  ">
       <Head>
@@ -33,7 +47,7 @@ const Home: NextPage = () => {
       </section>
 
       <section id="experience" className="snap-center">
-        <Experience />
+        <WorkExperience />
       </section>
 
       <section id="skills" className="snap-start">
@@ -65,3 +79,21 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experiences: Experience[] = await fetchExperiences();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
+
+  return {
+    props: {
+      pageInfo,
+      experiences,
+      skills,
+      projects,
+      socials,
+    },
+  };
+};
