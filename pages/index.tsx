@@ -73,7 +73,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           </div>
         </div>
       </Link>
-      <Footer />
+      <Footer socials={socials} />
     </div>
   );
 };

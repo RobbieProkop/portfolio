@@ -1,6 +1,4 @@
 import Link from "next/link";
-
-import { SocialIcon } from "react-social-icons";
 import { motion } from "framer-motion";
 
 type Props = {};
