@@ -9,6 +9,7 @@ type Props = {
   pageInfo: PageInfo;
 };
 
+//for next-image from sanity
 const configuredSanityClient = sanityClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
@@ -54,7 +55,7 @@ const About = ({ pageInfo }: Props) => {
       <div className="space-y px-0 md:px-10">
         <h4 className="text-4xl mb-3 font-semibold">Who am I?</h4>
 
-        <p className="text-base">{pageInfo?.backgroundInformation}</p>
+        <p className="text-base">{pageInfo?.backgroundInfo}</p>
       </div>
     </motion.div>
   );
