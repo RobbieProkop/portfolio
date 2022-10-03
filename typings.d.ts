@@ -48,8 +48,8 @@ export interface Experience extends SanityBody {
 }
 
 export interface Project extends SanityBody {
-  title: string;
   _type: "project";
+  Title: string;
   image: Image;
   linkToBuild: string;
   summary: string;

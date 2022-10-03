@@ -63,11 +63,11 @@ const Projects = ({ projects }: Props) => {
                     <span className="underline decoration-green-600/50">
                       {/* {project?.title.split(" ") || project?.title.split("-")}
                       {project?.title[0]} */}
-                      {project.title}
+                      {project?.Title}
                     </span>{" "}
                     {/* {project?.title.split(" ") || project?.title.split("-")}
                     {project?.title[1]} */}
-                    {project?.title}
+                    {project?.Title}
                   </h4>
 
                   <p className="text-lg text-center md:text-left">
