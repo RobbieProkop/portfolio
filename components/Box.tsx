@@ -3,18 +3,7 @@ import { motion } from "framer-motion";
 type Props = {};
 const Box = (props: Props) => {
   return (
-    <motion.div
-      // initial={{
-      //   y: 0,
-      // }}
-      // animate={{
-      //   y: -500,
-      // }}
-      // transition={{
-      //   duration: 3,
-      // }}
-      className=" flex items-center justify-center"
-    >
+    <motion.div className=" flex items-center justify-center">
       <motion.div
         initial={{
           scale: 0,
