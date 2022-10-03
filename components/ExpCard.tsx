@@ -93,6 +93,7 @@ const ExpCard = ({ experience }: Props) => {
           {experience.dateEnded ? experience.dateEnded : `PRESENT`} */}
         </p>
         <ul className="list-disc space-y-3 ml-5 text-lg">
+          {experience?.points}
           <li>Lead developer for DhammaDevs</li>
           <li>Built fullstack and static websites</li>
           <li>Consulted with clients</li>
