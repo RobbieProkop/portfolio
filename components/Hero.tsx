@@ -73,7 +73,7 @@ const Hero = ({ pageInfo }: Props) => {
   const words = [``];
   return (
     // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
-    <div className="h-screen top-0 z-1">
+    <div className="h-screen top-0 z-1 max-w-7xl mx-auto">
       {/* <BackgroundCircles /> */}
       {/* <motion.div
         initial={{
