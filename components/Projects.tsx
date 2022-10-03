@@ -43,27 +43,28 @@ const Projects = ({ projects }: Props) => {
                 className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
                 key={project._id}
               >
-                <motion.div
-                  initial={{
-                    y: -300,
-                    opacity: 0,
-                  }}
-                  whileInView={{
-                    y: 0,
-                    opacity: 1,
-                  }}
-                  transition={{ duration: 1.2 }}
-                  viewport={{ once: true }}
-                  className="h-[350px] w-[350px] flex justify-center items-center"
+                <Link
+                  href={project?.linkToBuild}
+                  className="hover:cursor-pointer"
                 >
-                  <Link
-                    href={project?.linkToBuild}
-                    target="_blank"
-                    className="hover:cursor-pointer"
-                  >
-                    <Image {...imageProps} className="hover:cursor-pointer" />
-                  </Link>
-                </motion.div>
+                  <a target="_blank">
+                    <motion.div
+                      initial={{
+                        y: -300,
+                        opacity: 0,
+                      }}
+                      whileInView={{
+                        y: 0,
+                        opacity: 1,
+                      }}
+                      transition={{ duration: 1.2 }}
+                      viewport={{ once: true }}
+                      className="h-[350px] w-[350px] flex justify-center items-center"
+                    >
+                      <Image {...imageProps} className="hover:cursor-pointer" />
+                    </motion.div>
+                  </a>
+                </Link>
                 <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                   <h4 className="text-4xl font-semibold text-center">
                     <span className="underline decoration-green-600/50">
