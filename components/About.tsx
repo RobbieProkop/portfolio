@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PageInfo } from "../typings";
-import { urlFor } from "../pages/api/sanity";
 import sanityClient from "@sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
 

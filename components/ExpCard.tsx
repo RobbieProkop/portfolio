@@ -95,9 +95,6 @@ const ExpCard = ({ experience }: Props) => {
           {experience?.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
-          {/* <li>Lead developer for DhammaDevs</li>
-          <li>Built fullstack and static websites</li>
-          <li>Consulted with clients</li> */}
         </ul>
       </div>
     </motion.article>
