@@ -54,7 +54,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <Skills skills={skills} />
       </section>
 
-      <section id="projects">
+      <section id="projects" className="snap-center">
         <Projects projects={projects} />
       </section>
 
@@ -64,11 +64,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       <Link href="#hero">
         <div className="sticky bottom-5 w-full cursor-pointer">
-          <div className="flex items-center justify-end pr-5">
+          <div className="flex items-center justify-end pr-5 hover:cursor-pointer">
             <FontAwesomeIcon
               icon={faAngleDoubleUp}
               size="lg"
-              className="rounded-full bg-gray-500 p-4 hover:animate-pulse hover:p-5 transition-all duration-500 "
+              className="rounded-full bg-gray-500 p-4 hover:animate-pulse transition-all duration-500 "
             />
           </div>
         </div>

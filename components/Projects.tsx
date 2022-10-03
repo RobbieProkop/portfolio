@@ -1,5 +1,4 @@
 import Image from "next/image";
-import monk from "../asset/images/monk.jpeg";
 import { motion } from "framer-motion";
 import { Project } from "../typings";
 import sanityClient from "@sanity/client";
@@ -27,7 +26,7 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative w-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
+      <div className="relative w-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
         {projects
           ?.sort((a, b) => {
             if (a._createdAt < b._createdAt) return -1;
@@ -41,7 +40,7 @@ const Projects = ({ projects }: Props) => {
             );
             return (
               <div
-                className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
                 key={project._id}
               >
                 <motion.div
@@ -57,7 +56,11 @@ const Projects = ({ projects }: Props) => {
                   viewport={{ once: true }}
                   className="h-[350px] w-[350px] flex justify-center items-center"
                 >
-                  <Link href={project?.linkToBuild} target="_blank">
+                  <Link
+                    href={project?.linkToBuild}
+                    target="_blank"
+                    className="hover:cursor-pointer"
+                  >
                     <Image {...imageProps} className="hover:cursor-pointer" />
                   </Link>
                 </motion.div>

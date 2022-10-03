@@ -67,11 +67,7 @@ const ExpCard = ({ experience }: Props) => {
                 key={tech._id}
                 className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
               >
-                <Image
-                  {...techProps}
-                  // objectFit="cover"
-                  // objectPosition="center"
-                />
+                <Image {...techProps} />
               </div>
             );
           })}
