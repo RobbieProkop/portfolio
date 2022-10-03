@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Project } from "../typings";
 import sanityClient from "@sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
+import Link from "next/link";
 
 type Props = {
   projects: Project[];
@@ -29,8 +30,8 @@ const Projects = ({ projects }: Props) => {
       <div className="relative w-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
         {projects
           ?.sort((a, b) => {
-            if (a > b) return -1;
-            if (a < b) return 1;
+            if (a._createdAt < b._createdAt) return -1;
+            if (a._createdAt > b._createdAt) return 1;
             return 0;
           })
           .map((project) => {
@@ -54,20 +55,17 @@ const Projects = ({ projects }: Props) => {
                   }}
                   transition={{ duration: 1.2 }}
                   viewport={{ once: true }}
-                  className="h-[350px] w-[350px]"
+                  className="h-[350px] w-[350px] flex justify-center items-center"
                 >
-                  <Image {...imageProps} />
+                  <Link href={project?.linkToBuild} target="_blank">
+                    <Image {...imageProps} className="hover:cursor-pointer" />
+                  </Link>
                 </motion.div>
                 <div className="space-y-10 px-0 md:px-10 max-w-6xl">
                   <h4 className="text-4xl font-semibold text-center">
                     <span className="underline decoration-green-600/50">
-                      {/* {project?.title.split(" ") || project?.title.split("-")}
-                      {project?.title[0]} */}
                       {project?.Title}
-                    </span>{" "}
-                    {/* {project?.title.split(" ") || project?.title.split("-")}
-                    {project?.title[1]} */}
-                    {project?.Title}
+                    </span>
                   </h4>
 
                   <p className="text-lg text-center md:text-left">
