@@ -43,12 +43,7 @@ const About = ({ pageInfo }: Props) => {
         }}
         className="relative mb-7 mt-7 md:mb-0 flex-shrink-0 w-56 h-56 md:w-96 md:h-96 xl:w-[500px] xl:h-[500px]"
       >
-        <Image
-          {...imageProps}
-          // layout="fill"
-          // objectFit="cover"
-          className="rounded-full md:rounded-lg"
-        />
+        <Image {...imageProps} className="rounded-full md:rounded-lg" />
       </motion.div>
 
       <div className="space-y px-0 md:px-10">
