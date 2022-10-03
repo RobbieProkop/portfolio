@@ -20,13 +20,13 @@ const Projects = ({ projects }: Props) => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="h-screen relative flex flex-col overflow-hidden text-left md:flex-row max-w-full justify-evenly items-center mx-auto z-0"
+      className="h-screen relative flex flex-col overflow-hidden text-left md:flex-row max-w-screen justify-evenly items-center mx-auto z-0"
     >
       <h3 className="absolute top-10 uppercase tracking-[20px] text-gray-500 text-2xl mb-5">
         Projects
       </h3>
 
-      <div className="relative w-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
+      <div className="relative max-w-[900px] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
         {projects
           ?.sort((a, b) => {
             if (a._createdAt < b._createdAt) return -1;
@@ -40,7 +40,7 @@ const Projects = ({ projects }: Props) => {
             );
             return (
               <div
-                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 h-screen"
                 key={project._id}
               >
                 <Link

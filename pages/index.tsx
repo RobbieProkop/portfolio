@@ -30,7 +30,7 @@ type Props = {
 
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
-    <div className="py-5 max-w-7xl mx-auto text-white snap-y snap-proximity z-0  ">
+    <div className="py-5 mx-auto text-white snap-y snap-proximity z-0  ">
       <Head>
         <title>DhammaDevs</title>
         <meta name="description" content="Portfolio for Robbie Prokop" />
