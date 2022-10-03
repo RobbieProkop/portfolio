@@ -1,11 +1,20 @@
 import Image from "next/image";
 import monk from "../asset/images/monk.jpeg";
 import { motion } from "framer-motion";
+import { Project } from "../typings";
+import sanityClient from "@sanity/client";
+import { useNextSanityImage } from "next-sanity-image";
 
-type Props = {};
-const Projects = (props: Props) => {
-  // dummy array
-  const projects = ["NLIF", "ZiziKarma", "Paw-Patrol", "API-Mania"];
+type Props = {
+  projects: Project[];
+};
+
+const configuredSanityClient = sanityClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  useCdn: true,
+});
+const Projects = ({ projects }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -18,46 +27,56 @@ const Projects = (props: Props) => {
       </h3>
 
       <div className="relative w-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
-        {projects.map((project) => (
-          <div
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
-            key={project}
-          >
-            <motion.div
-              initial={{
-                y: -300,
-                opacity: 0,
-              }}
-              whileInView={{
-                y: 0,
-                opacity: 1,
-              }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-              className="h-[350px] w-[350px]"
-            >
-              <Image src={monk} objectFit="contain" />
-            </motion.div>
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-green-600/50">
-                  ZiziKarma
-                </span>{" "}
-                Psychology
-              </h4>
+        {projects
+          ?.sort((a, b) => {
+            if (a > b) return -1;
+            if (a < b) return 1;
+            return 0;
+          })
+          .map((project) => {
+            const imageProps = useNextSanityImage(
+              configuredSanityClient,
+              project?.image
+            );
+            return (
+              <div
+                className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+                key={project._id}
+              >
+                <motion.div
+                  initial={{
+                    y: -300,
+                    opacity: 0,
+                  }}
+                  whileInView={{
+                    y: 0,
+                    opacity: 1,
+                  }}
+                  transition={{ duration: 1.2 }}
+                  viewport={{ once: true }}
+                  className="h-[350px] w-[350px]"
+                >
+                  <Image {...imageProps} />
+                </motion.div>
+                <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+                  <h4 className="text-4xl font-semibold text-center">
+                    <span className="underline decoration-green-600/50">
+                      {/* {project?.title.split(" ") || project?.title.split("-")}
+                      {project?.title[0]} */}
+                      {project.title}
+                    </span>{" "}
+                    {/* {project?.title.split(" ") || project?.title.split("-")}
+                    {project?.title[1]} */}
+                    {project?.title}
+                  </h4>
 
-              <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-                quidem officia voluptatem provident mollitia ipsam alias
-                repudiandae expedita. Nisi recusandae debitis blanditiis optio
-                minima nesciunt labore expedita aliquid nihil nulla, amet,
-                soluta aliquam deserunt pariatur laborum iusto quis consequuntur
-                facere earum, inventore a ut voluptates! Fuga obcaecati odio
-                porro quasi?
-              </p>
-            </div>
-          </div>
-        ))}
+                  <p className="text-lg text-center md:text-left">
+                    {project?.summary}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
       </div>
 
       <div className="w-full absolute top-[30%] bg-green-600/10 left-0 h-[400px] -skew-y-12"></div>
