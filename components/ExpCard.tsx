@@ -89,14 +89,15 @@ const ExpCard = ({ experience }: Props) => {
                 "en-GB",
                 options
               )}
-          {/* Started {experience.dateStarted} -{" "}
-          {experience.dateEnded ? experience.dateEnded : `PRESENT`} */}
         </p>
-        <ul className="list-disc space-y-3 ml-5 text-lg">
-          {experience?.points}
-          <li>Lead developer for DhammaDevs</li>
+        <ul className="list-disc space-y-3 ml-5 text-lg max-h-96 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-green-600/80 pr-5">
+          {/* CHANGE THIS INDEX TO UUID OR SOMETHING ELSE */}
+          {experience?.points.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+          {/* <li>Lead developer for DhammaDevs</li>
           <li>Built fullstack and static websites</li>
-          <li>Consulted with clients</li>
+          <li>Consulted with clients</li> */}
         </ul>
       </div>
     </motion.article>
