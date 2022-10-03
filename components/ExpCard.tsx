@@ -22,6 +22,14 @@ const ExpCard = ({ experience }: Props) => {
     experience?.companyImage
   );
 
+  //for dates
+  const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+
   return (
     <motion.article
       initial={{ y: 0 }}
@@ -68,10 +76,21 @@ const ExpCard = ({ experience }: Props) => {
             );
           })}
         </div>
-        <p className="uppercase py-3 text-gray-300">
+        <p className="uppercase py-3 text-gray-300 ">
           {/* dates */}
-          Started {experience.dateStarted} -{" "}
-          {experience.dateEnded ? experience.dateEnded : `PRESENT`}
+          {new Date(experience.dateStarted).toLocaleDateString(
+            "en-GB",
+            options
+          )}{" "}
+          -{" "}
+          {experience.isCurrentlyWorkingHere
+            ? "Present"
+            : new Date(experience.dateEnded).toLocaleDateString(
+                "en-GB",
+                options
+              )}
+          {/* Started {experience.dateStarted} -{" "}
+          {experience.dateEnded ? experience.dateEnded : `PRESENT`} */}
         </p>
         <ul className="list-disc space-y-3 ml-5 text-lg">
           <li>Lead developer for DhammaDevs</li>
