@@ -52,10 +52,13 @@ const Contact = (props: Props) => {
         </div>
 
         <form
+          name="contact"
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col space-y-2 w-fit mx-auto"
+          method="POST"
+          data-netlify="true"
         >
-          <div className="fle space-x-2">
+          <div className="flex space-x-2">
             <input
               {...register("name")}
               placeholder="Name"
