@@ -1,10 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCoffee,
-  faPhone,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useForm, SubmitHandler } from "react-hook-form";
+import BackgroundCircles from "./BackgroundCircles";
 
 type Inputs = {
   name: string;
@@ -20,9 +17,10 @@ const Contact = (props: Props) => {
   const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center top-24">
-      {/* <BackgroundCircles /> */}
-      {/* <motion.div
+    // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
+    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 mx-auto justify-evenly items-center top-24 space-y-8 overflow-hidden">
+      <BackgroundCircles />
+      <motion.div
         initial={{
           scale: 0,
           opacity: 0,
@@ -39,7 +37,7 @@ const Contact = (props: Props) => {
           times: [0, 0.2, 0.5, 0.8, 1],
         }}
         className="box flex items-center justify-center mx-auto z-25 top-0"
-      /> */}
+      />
       <h3 className="absolute top-0 uppercase tracking-[20px] text-gray-500 text-2xl mb-5">
         Contact
       </h3>
