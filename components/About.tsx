@@ -49,7 +49,7 @@ const About = ({ pageInfo }: Props) => {
       <div className="space-y px-0 md:px-10">
         <h4 className="text-4xl mb-3 font-semibold">Who am I?</h4>
 
-        <p className="text-base">{pageInfo?.backgroundInfo}</p>
+        <p className="text-lg">{pageInfo?.backgroundInfo}</p>
       </div>
     </motion.div>
   );
