@@ -72,27 +72,7 @@ type Props = {
 const Hero = ({ pageInfo }: Props) => {
   const words = [``];
   return (
-    // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
     <div className="h-screen relative top-0 z-1 max-w-7xl mx-auto">
-      {/* <BackgroundCircles /> */}
-      {/* <motion.div
-        initial={{
-          scale: 0,
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          scale: [0, 1, 2, 2, 1, 1, 0],
-          rotate: [0, 0, 0, 180, 180, 0],
-          borderRadius: ["0%", "0%", "0%", "50%", "50%", "0%"],
-        }}
-        transition={{
-          duration: 2.5,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-        }}
-        className="box flex items-center justify-center mx-auto z-25 top-0"
-      /> */}
       <div className="absolute w-full mt-10">
         <div className="flex items-center justify-center h-full">
           <Box />
