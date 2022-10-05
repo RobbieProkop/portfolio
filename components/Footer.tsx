@@ -14,6 +14,7 @@ const Footer = ({ socials }: Props) => {
           fgColor="gray"
           bgColor="transparent"
           target="_blank"
+          className="hover:animate-pulse"
         />
       ))}
     </div>
