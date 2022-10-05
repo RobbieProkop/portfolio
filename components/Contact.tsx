@@ -21,24 +21,6 @@ const Contact = (props: Props) => {
     // may need these classes for background cirlcles: h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden
     <div className="h-screen flex relative flex-col text-center md:text-left  max-w-7xl px-10 mx-auto justify-evenly items-center top-24 space-y-8 overflow-hidden">
       <BackgroundCircles />
-      {/* <motion.div
-        initial={{
-          scale: 0,
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-          scale: [0, 1, 2, 2, 1, 1, 0],
-          rotate: [0, 0, 0, 180, 180, 0],
-          borderRadius: ["0%", "0%", "0%", "50%", "50%", "0%"],
-        }}
-        transition={{
-          duration: 2.5,
-          ease: "easeInOut",
-          times: [0, 0.2, 0.5, 0.8, 1],
-        }}
-        className="box flex items-center justify-center mx-auto z-25 top-0"
-      /> */}
       <h3 className="absolute top-0 uppercase tracking-[20px] text-gray-500 text-2xl mb-5">
         Contact
       </h3>
