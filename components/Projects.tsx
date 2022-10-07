@@ -61,7 +61,11 @@ const Projects = ({ projects }: Props) => {
                       viewport={{ once: true }}
                       className="h-[350px] w-[350px] flex justify-center items-center"
                     >
-                      <Image {...imageProps} className="hover:cursor-pointer" />
+                      <Image
+                        {...imageProps}
+                        className="hover:cursor-pointer"
+                        alt=""
+                      />
                     </motion.div>
                   </a>
                 </Link>

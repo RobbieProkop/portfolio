@@ -32,7 +32,7 @@ const Skill = ({ skill, directionLeft }: Props) => {
         className="h-24 w-24 flex items-center justify-center border-gray-500 xl:h-32 xl:w-32 filter group-hover:grayscale group-hover:animate-pulse
         transition duration-300 ease-in-out"
       >
-        <Image {...imageProps} />
+        <Image {...imageProps} alt="" />
       </motion.div>
     </div>
   );

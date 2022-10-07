@@ -50,6 +50,7 @@ const ExpCard = ({ experience }: Props) => {
           objectFit="contain"
           objectPosition="center"
           className="rounded-full"
+          alt=""
         />
       </motion.div>
       <div className="px-0 md:px-8">
@@ -67,7 +68,7 @@ const ExpCard = ({ experience }: Props) => {
                 key={tech._id}
                 className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
               >
-                <Image {...techProps} />
+                <Image {...techProps} alt="" />
               </div>
             );
           })}
