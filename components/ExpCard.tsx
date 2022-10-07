@@ -16,26 +16,11 @@ const configuredSanityClient = sanityClient({
   useCdn: true,
 });
 
-interface DateFormatOptions {
-  weekday: string;
-  year: string;
-  month: string;
-  day: string;
-}
-
 const ExpCard = ({ experience }: Props) => {
   const imageProps = useNextSanityImage(
     configuredSanityClient,
     experience?.companyImage
   );
-
-  //for dates
-  const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
 
   return (
     <motion.article
@@ -79,17 +64,21 @@ const ExpCard = ({ experience }: Props) => {
           })}
         </div>
         <p className="uppercase py-3 text-gray-300 ">
-          {new Date(experience.dateStarted).toLocaleDateString(
-            "en-GB",
-            options
-          )}{" "}
+          {new Date(experience.dateStarted).toLocaleDateString("en-GB", {
+            weekday: "short",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}{" "}
           -{" "}
           {experience.isCurrentlyWorkingHere
             ? "Present"
-            : new Date(experience.dateEnded).toLocaleDateString(
-                "en-GB",
-                options
-              )}
+            : new Date(experience.dateEnded).toLocaleDateString("en-GB", {
+                weekday: "short",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
         </p>
         <ul className="list-disc space-y-3 ml-5 text-lg max-h-96 overflow-y-scroll scrollbar-thin scrollbar-track-black scrollbar-thumb-green-600/80 pr-5">
           {/* CHANGE THIS INDEX TO UUID OR SOMETHING ELSE */}
