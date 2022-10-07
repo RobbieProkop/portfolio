@@ -69,7 +69,7 @@ const ExpCard = ({ experience }: Props) => {
         <p className="font-bold text-2xl my-1">{experience?.company}</p>
         <div className="flex flex-wrap max-w-[350px] items-center">
           {experience.technologies.map((tech) => {
-            const techProps = () =>
+            const TechProps = () =>
               useNextSanityImage(configuredSanityClient, tech.image);
 
             return (
@@ -77,7 +77,7 @@ const ExpCard = ({ experience }: Props) => {
                 key={tech._id}
                 className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
               >
-                <Image {...techProps()} alt="" />
+                <Image {...TechProps()} alt="" />
               </div>
             );
           })}
