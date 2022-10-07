@@ -9,12 +9,23 @@ type Props = {
   experience: Experience;
 };
 
+//this should be type array
+const techProps = (tech: any) => {
+  return useNextSanityImage(configuredSanityClient, tech.image);
+};
 //for next-image from sanity
 const configuredSanityClient = sanityClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   useCdn: true,
 });
+
+interface DateFormatOptions {
+  weekday: string;
+  year: string;
+  month: string;
+  day: string;
+}
 
 const ExpCard = ({ experience }: Props) => {
   const imageProps = useNextSanityImage(
@@ -62,6 +73,7 @@ const ExpCard = ({ experience }: Props) => {
               configuredSanityClient,
               tech.image
             );
+            // techProps(tech);
 
             return (
               <div
@@ -74,7 +86,6 @@ const ExpCard = ({ experience }: Props) => {
           })}
         </div>
         <p className="uppercase py-3 text-gray-300 ">
-          {/* dates */}
           {new Date(experience.dateStarted).toLocaleDateString(
             "en-GB",
             options

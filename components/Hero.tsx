@@ -94,7 +94,7 @@ const Hero = ({ pageInfo }: Props) => {
         className="name h-full flex flex-col justify-center items-center"
       >
         <div className="line animate:pulse"></div>
-        <h1>Hi, I'm {pageInfo?.name}</h1>
+        <h1>Hi, I&apos;m {pageInfo?.name}</h1>
 
         <div className="line"></div>
 

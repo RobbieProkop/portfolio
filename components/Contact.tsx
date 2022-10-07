@@ -26,8 +26,10 @@ const Contact = (props: Props) => {
       <div className="flex flex-col space-y-10">
         <BackgroundCircles />
         <h4 className="text-4xl font-semibold text-center items-center flex flex-col">
-          You aren't going to be disapointed,
-          <span className="underline declaration-green-600/50">Let's Talk</span>
+          You aren&apos;t going to be disapointed,
+          <span className="underline declaration-green-600/50">
+            Let&apos;s Talk
+          </span>
         </h4>
 
         <div className="space-y-10">
