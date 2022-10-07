@@ -9,10 +9,6 @@ type Props = {
   experience: Experience;
 };
 
-//this should be type array
-const techProps = (tech: any) => {
-  return useNextSanityImage(configuredSanityClient, tech.image);
-};
 //for next-image from sanity
 const configuredSanityClient = sanityClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
