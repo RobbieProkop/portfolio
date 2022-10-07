@@ -34,10 +34,8 @@ const Projects = ({ projects }: Props) => {
             return 0;
           })
           .map((project) => {
-            const imageProps = useNextSanityImage(
-              configuredSanityClient,
-              project?.image
-            );
+            const imageProps = () =>
+              useNextSanityImage(configuredSanityClient, project?.image);
             return (
               <div
                 className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 h-screen"
@@ -62,7 +60,7 @@ const Projects = ({ projects }: Props) => {
                       className="h-[350px] w-[350px] flex justify-center items-center"
                     >
                       <Image
-                        {...imageProps}
+                        {...imageProps()}
                         className="hover:cursor-pointer"
                         alt=""
                       />
