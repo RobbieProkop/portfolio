@@ -63,7 +63,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       </section>
 
       <Link href="#hero">
-        <div className="sticky bottom-5 max-w-7xl mx-auto cursor-pointer">
+        <div className="sticky bottom-5 max-w-7xl mx-auto cursor-pointer mt-4">
           <div className="flex items-center justify-end pr-5 hover:cursor-pointer">
             <FontAwesomeIcon
               icon={faAngleDoubleUp}
