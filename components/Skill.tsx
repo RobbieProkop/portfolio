@@ -27,6 +27,7 @@ const Skill = ({ skill, directionLeft }: Props) => {
           opacity: 0,
         }}
         whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }} // used only if want to happen once
         transition={{ duration: 1 }}
         // group-hover:animate-bounce
         className="h-24 w-24 flex items-center justify-center border-gray-500 xl:h-32 xl:w-32 filter group-hover:grayscale group-hover:animate-pulse
