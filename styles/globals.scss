@@ -120,6 +120,13 @@ h1 {
   h1 {
     font-size: 8rem;
   }
+
+  .circles {
+    width: 700px;
+    height: 750px;
+    margin-top: 38rem;
+    border-radius: 25px;
+  }
 }
 
 @media (max-width: 796px) {
@@ -128,8 +135,8 @@ h1 {
   }
 
   .circles {
-    width: 700px;
-    height: 850px;
+    width: 600px;
+    height: 650px;
   }
 }
 @media (max-width: 599px) {
