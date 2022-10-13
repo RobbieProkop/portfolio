@@ -146,8 +146,12 @@ h1 {
     width: 600px;
     height: 650px;
   }
+
+  h4 {
+    // font-size: 1.8rem !important;
+  }
 }
-@media (max-width: 599px) {
+@media (max-width: 620px) {
   h1,
   h2 {
     margin: 1rem 0;
@@ -158,6 +162,29 @@ h1 {
 
   h2 {
     font-size: 3rem;
+  }
+
+  .circles {
+    display: none;
+    // border: none;
+    // border-top: 1px solid rgb(22 163 74 / 0.8);
+    // border-bottom: 1px solid rgb(22 163 74 / 0.8);
+    // width: screen;
+    // height: 700px;
+  }
+
+  .contact-border {
+  }
+
+  .email-name {
+    display: block;
+    input {
+      width: 100%;
+    }
+    .email-input {
+      margin-left: 0 !important;
+      margin-top: 8px;
+    }
   }
 }
 

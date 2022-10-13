@@ -25,9 +25,9 @@ const Contact = (props: Props) => {
         Contact
       </h3>
 
-      <div className="flex flex-col space-y-10">
+      <div className="flex flex-col space-y-10 contact-border">
         <BackgroundCircles />
-        <h4 className="text-4xl font-semibold text-center items-center flex flex-col">
+        <h4 className="text-3xl md:text-4xl font-semibold text-center items-center flex flex-col">
           You aren&apos;t going to be disapointed,
           <span className="underline declaration-green-600/50">
             Let&apos;s Talk
@@ -59,7 +59,7 @@ const Contact = (props: Props) => {
           onSubmit={handleSubmit(onSubmit)}
           className="contact-form flex flex-col space-y-2 w-fit mx-auto"
         >
-          <div className="flex space-x-2">
+          <div className="flex space-x-2 email-name">
             <input
               {...register("name")}
               placeholder="Name"
@@ -69,7 +69,7 @@ const Contact = (props: Props) => {
             <input
               {...register("email")}
               placeholder="Email"
-              className="contactInput"
+              className="contactInput email-input"
               type="email"
             />
           </div>
@@ -87,7 +87,7 @@ const Contact = (props: Props) => {
           />
           <button
             type="submit"
-            className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg"
+            className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg hover:grayscale ransition duration-300 ease-in-out"
           >
             Submit
           </button>
