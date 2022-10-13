@@ -55,7 +55,7 @@ const Contact = (props: Props) => {
         <form
           name="contact"
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-fit mx-auto"
+          className="contact-form flex flex-col space-y-2 w-fit mx-auto"
           method="POST"
           data-netlify="true"
         >
