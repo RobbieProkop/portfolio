@@ -121,6 +121,10 @@ h1 {
     font-size: 8rem;
   }
 
+  .contact-box {
+    margin-bottom: 3rem;
+  }
+
   .circles {
     width: 700px;
     height: 750px;
@@ -142,8 +146,14 @@ h1 {
 @media (max-width: 599px) {
   h1,
   h2 {
-    font-size: 4rem;
     margin: 1rem 0;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
   }
 }
 
