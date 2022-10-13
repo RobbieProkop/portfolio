@@ -15,7 +15,9 @@ type Props = {};
 const Contact = (props: Props) => {
   const { register, handleSubmit } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = (formData) => console.log(formData);
+  const onSubmit: SubmitHandler<Inputs> = (formData) => {
+    window.location.href = `mailto:dhammadevs@gmail.com?subject=${formData.subject}&body=Hi, I'm ${formData.name}. ${formData.message}`;
+  };
 
   return (
     <div className="contact-box h-screen flex relative flex-col text-center md:text-left  max-w-7xl px-10 mx-auto justify-evenly items-center top-24 space-y-8 overflow-hidden">
@@ -56,8 +58,6 @@ const Contact = (props: Props) => {
           name="contact"
           onSubmit={handleSubmit(onSubmit)}
           className="contact-form flex flex-col space-y-2 w-fit mx-auto"
-          method="POST"
-          data-netlify="true"
         >
           <div className="flex space-x-2">
             <input
