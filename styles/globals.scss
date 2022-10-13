@@ -164,16 +164,19 @@ h1 {
     font-size: 3rem;
   }
 
+  h4 {
+    margin-top: 0 !important;
+  }
+
   .circles {
     display: none;
-    // border: none;
-    // border-top: 1px solid rgb(22 163 74 / 0.8);
-    // border-bottom: 1px solid rgb(22 163 74 / 0.8);
-    // width: screen;
-    // height: 700px;
   }
 
   .contact-border {
+    padding: 1.5rem;
+    border: 1px solid rgb(22 163 74 / 0.8);
+    border-radius: 5px;
+    // border-bottom: 1px solid rgb(22 163 74 / 0.8);
   }
 
   .email-name {
