@@ -146,11 +146,8 @@ h1 {
     width: 600px;
     height: 650px;
   }
-
-  h4 {
-    // font-size: 1.8rem !important;
-  }
 }
+
 @media (max-width: 620px) {
   h1,
   h2 {
@@ -176,7 +173,6 @@ h1 {
     padding: 1.5rem;
     border: 1px solid rgb(22 163 74 / 0.8);
     border-radius: 5px;
-    // border-bottom: 1px solid rgb(22 163 74 / 0.8);
   }
 
   .email-name {
