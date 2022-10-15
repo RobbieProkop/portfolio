@@ -28,7 +28,7 @@ const Contact = (props: Props) => {
       <div className="flex flex-col space-y-10 contact-border">
         <BackgroundCircles />
         <h4 className="text-3xl md:text-4xl font-semibold text-center items-center flex flex-col">
-          You aren&apos;t going to be disapointed,
+          You won&apos;t be disapointed,
           <span className="underline declaration-green-600/50">
             Let&apos;s Talk
           </span>
