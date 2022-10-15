@@ -43,19 +43,27 @@ const Home = ({
 }: Props) => {
   return (
     <>
-      <Head>
+      {/* <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="keywords" content={keywords} />
         <meta name="description" content={description} />
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
         <title>{title}</title>
-      </Head>
+      </Head> */}
       <div className="py-5 mx-auto text-white snap-y snap-proximity z-0  ">
-        <Head>
+        {/* <Head>
           <title>DhammaDevs</title>
           <meta name="description" content="Portfolio for Robbie Prokop" />
           <link rel="icon" href="/favicon.ico" />
+        </Head> */}
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="keywords" content={keywords} />
+          <meta name="description" content={description} />
+          <meta charSet="utf-8" />
+          <link rel="icon" href="/favicon.ico" />
+          <title>{title}</title>
         </Head>
         <Header />
 
