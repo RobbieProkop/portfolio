@@ -3,7 +3,7 @@
 
 ## Demo
 
-![](https://github.com/RobbieProkop/robbie-prokop_launchpad-react-code-challenge/blob/master/frontend/public/demo-gif.gif)
+![](https://github.com/RobbieProkop/portfolio/blob/master/asset/images/portfolio-gif.gif)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
