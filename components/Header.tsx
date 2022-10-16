@@ -22,7 +22,7 @@ const Header = (props: Props) => {
             duration: 1.7,
             type: "spring",
           }}
-          className="hover:text-white cursor-pointer"
+          className="hover:text-white cursor-pointer transition-all duration-300 ease-in-out"
         >
           DhammaDevs
         </motion.h3>
