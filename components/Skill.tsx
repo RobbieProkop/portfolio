@@ -4,6 +4,7 @@ import fav from "../asset/images/fav.jpeg";
 import sanityClient from "@sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
 import { Skill } from "../typings";
+import useWindowDimensions from "../utils/getWindowDimensions";
 
 type Props = {
   directionLeft?: boolean;
@@ -19,9 +20,10 @@ const configuredSanityClient = sanityClient({
 
 const Skill = ({ skill, directionLeft }: Props) => {
   const imageProps = useNextSanityImage(configuredSanityClient, skill.image);
-  const isMobile = window.innerWidth < 768;
+  const { width, height } = useWindowDimensions();
+  console.log("width", width);
+  const isMobile = Number(width) < Number(768);
 
-  console.log(window.innerWidth);
   return (
     <div className="group relative flex cursor-pointer">
       {isMobile && (
