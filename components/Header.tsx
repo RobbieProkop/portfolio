@@ -44,12 +44,6 @@ const Header = (props: Props) => {
         }}
         className="flex flex-flex-row items-center cursor-pointer"
       >
-        {/* <FontAwesomeIcon
-          icon={faBars}
-          size="lg"
-          style={{ fontSize: 25, color: "grey" }}
-          className="sm:inline-flex md:hidden "
-        /> */}
         <Link href="#about">
           {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
           <h3 className=" text-sm  pr-3 hover:text-white">about</h3>
