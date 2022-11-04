@@ -19,6 +19,7 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocials } from "../utils/fetchSocials";
+import { useEffect, useState } from "react";
 
 type Props = {
   pageInfo: PageInfo;
@@ -41,6 +42,16 @@ const Home = ({
   keywords,
   description,
 }: Props) => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    console.log("inner window:", window.innerWidth);
+    setWidth(window.innerWidth);
+    console.log("indexwidth:", width);
+  }, [setWidth]);
+
+  console.log("width after use effect", width);
+
   return (
     <>
       <div className="py-5 mx-auto text-white snap-y snap-proximity z-0  ">
