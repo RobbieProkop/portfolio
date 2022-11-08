@@ -45,9 +45,7 @@ const Home = ({
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    console.log("inner window:", window.innerWidth);
     setWidth(window.innerWidth);
-    console.log("indexwidth:", width);
   }, [setWidth]);
 
   console.log("width after use effect", width);
