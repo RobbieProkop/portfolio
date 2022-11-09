@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Experience } from "../typings";
 import sanityClient from "@sanity/client";
 import { useNextSanityImage } from "next-sanity-image";
+import useWindowDimensions from "../utils/getWindowDimensions";
 
 type Props = {
   experience: Experience;
@@ -21,6 +22,9 @@ const ExpCard = ({ experience }: Props) => {
     configuredSanityClient,
     experience?.companyImage
   );
+
+  const { width, height } = useWindowDimensions();
+  const isMobile = Number(width) < Number(418);
 
   return (
     <motion.article
@@ -49,19 +53,36 @@ const ExpCard = ({ experience }: Props) => {
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
         <p className="font-bold text-2xl my-1">{experience?.company}</p>
         <div className="flex flex-wrap max-w-[350px] items-center">
-          {experience.technologies.map((tech) => {
-            const TechProps = () =>
-              useNextSanityImage(configuredSanityClient, tech.image);
+          {!isMobile &&
+            experience.technologies.map((tech) => {
+              const TechProps = () =>
+                useNextSanityImage(configuredSanityClient, tech.image);
 
-            return (
-              <div
-                key={tech._id}
-                className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
-              >
-                <Image {...TechProps()} alt="" />
-              </div>
-            );
-          })}
+              return (
+                <div
+                  key={tech._id}
+                  className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
+                >
+                  <Image {...TechProps()} alt="" />
+                </div>
+              );
+            })}
+          {isMobile &&
+            experience.technologies
+              .map((tech) => {
+                const TechProps = () =>
+                  useNextSanityImage(configuredSanityClient, tech.image);
+
+                return (
+                  <div
+                    key={tech._id}
+                    className="h-12 w-12 flex justify-center items-center ml-2 mt-1"
+                  >
+                    <Image {...TechProps()} alt="" />
+                  </div>
+                );
+              })
+              .slice(0, 9)}
         </div>
         <p className="uppercase py-3 text-gray-300 ">
           {new Date(experience.dateStarted).toLocaleDateString("en-GB", {
