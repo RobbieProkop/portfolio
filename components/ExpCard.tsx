@@ -45,7 +45,7 @@ const ExpCard = ({ experience }: Props) => {
           alt=""
         />
       </motion.div>
-      <div className="px-0 md:px-8">
+      <div className="px-0 md:px-8 exp-card">
         <h4 className="text-4xl font-light">{experience?.jobTitle}</h4>
         <p className="font-bold text-2xl my-1">{experience?.company}</p>
         <div className="flex flex-wrap max-w-[350px] items-center">

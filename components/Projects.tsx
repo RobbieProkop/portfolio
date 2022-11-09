@@ -38,7 +38,7 @@ const Projects = ({ projects }: Props) => {
               useNextSanityImage(configuredSanityClient, project?.image);
             return (
               <div
-                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 h-screen"
+                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 h-screen project-card"
                 key={project._id}
               >
                 <Link
