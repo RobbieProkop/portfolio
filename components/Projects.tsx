@@ -26,7 +26,7 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative max-w-[900px] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80">
+      <div className="relative max-w-[900px] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80 project-container">
         {projects
           ?.sort((a, b) => {
             if (a._createdAt < b._createdAt) return -1;
