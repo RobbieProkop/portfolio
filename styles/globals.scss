@@ -150,6 +150,19 @@ h1 {
     width: 600px;
     height: 650px;
   }
+
+  #about {
+    .about {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: default;
+
+      .photo {
+        position: default;
+      }
+    }
+  }
 }
 
 @media (max-width: 620px) {
