@@ -67,7 +67,7 @@ const Projects = ({ projects }: Props) => {
                     </motion.div>
                   </a>
                 </Link>
-                <div className="space-y-10 px-0 md:px-10 max-w-6xl">
+                <div className="space-y-10 px-0 md:px-10 max-w-6xl project-desc">
                   <h4 className="text-4xl font-semibold text-center">
                     <span className="underline decoration-green-600/50">
                       {project?.Title}

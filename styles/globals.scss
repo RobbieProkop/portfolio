@@ -203,7 +203,7 @@ h1 {
 
   #projects {
     .project-container {
-      width: 90%;
+      max-width: 100%;
     }
   }
 
@@ -215,6 +215,8 @@ h1 {
     padding: 1.5rem;
     border: 1px solid rgb(22 163 74 / 0.8);
     border-radius: 5px;
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
   }
 
   .email-name {
@@ -225,6 +227,24 @@ h1 {
     .email-input {
       margin-left: 0 !important;
       margin-top: 8px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  #experience {
+    .exp-img {
+      display: none;
+    }
+    .exp-container {
+      margin-top: 4rem;
+    }
+  }
+
+  #projects {
+    .project-desc {
+      width: 90vw;
+      margin-top: -2rem;
     }
   }
 }

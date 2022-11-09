@@ -38,7 +38,7 @@ const ExpCard = ({ experience }: Props) => {
         transition={{ duration: 1.2 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="h-32 w-32 xl:w-[150px] xl:h-[150px] relative"
+        className="h-32 w-32 xl:w-[150px] xl:h-[150px] relative exp-img"
       >
         <Image
           {...imageProps}

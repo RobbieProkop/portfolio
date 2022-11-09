@@ -34,7 +34,7 @@ const Contact = (props: Props) => {
           </span>
         </h4>
 
-        <div className="space-y-10">
+        <div className="space-y-0 md:space-y-10">
           {/* Icons */}
           <div className="flex items-center justify-center space-x-5">
             <FontAwesomeIcon
