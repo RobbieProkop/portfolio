@@ -95,7 +95,7 @@ const Canvas = () => {
       for (let i = 0; i < this.columns; i++) {
         this.symbols[i] = new Symbol(
           i,
-          height * Math.random(),
+          this.canvasHeight * Math.random(),
           fontSize,
           this.canvasHeight
         );
@@ -125,7 +125,7 @@ const Canvas = () => {
 
       lastTime = timeStamp;
       if (timer > nextFrame) {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
+        ctx.fillStyle = "rgba(5, 5, 5, 0.09)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.textAlign = "center";
         ctx.fillStyle = "#04b704df";
