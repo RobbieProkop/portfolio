@@ -47,10 +47,13 @@ const Canvas = () => {
   //   requestAnimationFrame(animate);
   // };
 
+  const characters =
+    "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヽヾАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789";
+
   class Symbol {
     constructor(x, y, fontSize, canvasHeight) {
-      this.characters =
-        "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヽヾАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789";
+      // this.characters =
+      //   "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヽヾАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789";
       this.x = x;
       this.y = y;
       this.fontSize = fontSize;
@@ -60,8 +63,8 @@ const Canvas = () => {
     }
     // randomize character and draw at a specific position
     draw(context) {
-      this.text = this.characters.charAt(
-        Math.floor(Math.random() * this.characters.length)
+      this.text = characters.charAt(
+        Math.floor(Math.random() * characters.length)
       );
       context.fillStyle = "#0aff0a";
       context.fillText(
@@ -69,7 +72,7 @@ const Canvas = () => {
         this.x * this.fontSize,
         this.y * this.fontSize
       );
-      if (this.y * this.fontSize > this.canvasHeight) {
+      if (this.y * this.fontSize > this.canvasHeight && Math.random() > 0.98) {
         this.y = 0;
       } else {
         this.y += 1;
@@ -78,6 +81,7 @@ const Canvas = () => {
   }
 
   const fontSize = 25;
+  const symbolsArr = characters.split();
   class Effect {
     constructor(canvasWidth, canvasHeight) {
       this.canvasWidth = canvasWidth;
@@ -91,18 +95,17 @@ const Canvas = () => {
     //start with a # to make it private
     #initialize() {
       for (let i = 0; i < this.columns; i++) {
-        this.symbols[i] = new Symbol(i, 0, fontSize, this.canvasHeight);
+        this.symbols[i] = new Symbol(
+          i,
+          height * Math.random(),
+          fontSize,
+          this.canvasHeight
+        );
       }
     }
   }
 
   const effect = new Effect(width, height);
-
-  const animate = (ctx) => {
-    ctx.font = effect.fontSize;
-    effect.symbols.forEach((symbol) => symbol.draw(ctx));
-    requestAnimationFrame(animate);
-  };
 
   // make the canvas appear on initial load
   useEffect(() => {
@@ -110,18 +113,19 @@ const Canvas = () => {
     handleWindowHeight();
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    ctx.font = effect.fontSize;
+    ctx.font = fontSize;
     canvas.width = width;
     canvas.height = height;
 
     const animate = () => {
-      ctx.font = effect.fontSize;
+      ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = fontSize + "px monospace";
       effect.symbols.forEach((symbol) => symbol.draw(ctx));
       requestAnimationFrame(animate);
     };
-    animate(ctx);
-    // ctx.font = fontSize + "px monospace";
-  }, [animate]);
+    animate();
+  });
 
   return <canvas id="canvas1" className="canvas" ref={canvasRef} />;
 };
