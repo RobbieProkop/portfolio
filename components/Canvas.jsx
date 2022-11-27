@@ -10,41 +10,6 @@ const Canvas = () => {
     setHeight(window.innerHeight);
   };
 
-  // const draw = (ctx) => {
-  //   ctx.fillStyle = "#fff";
-  //   ctx.beginPath();
-  //   ctx.arc(50, 100, 20, 0, 2 * Math.PI);
-  //   ctx.fill();
-  // };
-
-  // const characters =
-  //   "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヽヾАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789!@#$%^&*()_+=-?><{}[]/|";
-
-  // let currentText = "";
-  // const fontSize = 25;
-
-  // const draw = (x, y, fontSize, canvasHeight, context) => {
-  //   currentText = characters.charAt(
-  //     Math.floor(Math.random() * characters.length)
-  //   );
-  //   context.fillStyle = "#0aff0a";
-  //   context.fillText(currentText, x * fontSize, y * fontSize);
-  //   y * fontSize > canvasHeight ? (y = 0) : (y += 1);
-  // };
-
-  // const symbolsArr = characters.split("");
-  // const effect = (canvasWidth, canvasHeight) => {
-  //   const columns = canvasWidth / fontSize;
-  //   console.log("symbolsArr :>> ", symbolsArr);
-  // };
-
-  // const animate = (ctx, canvasHeight) => {
-  //   symbolsArr.forEach((symbol, index) =>
-  //     draw(index, 0, canvasHeight, fontSize, ctx)
-  //   );
-  //   requestAnimationFrame(animate);
-  // };
-
   const characters =
     "ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヽヾАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ0123456789";
 
@@ -106,9 +71,7 @@ const Canvas = () => {
   const effect = new Effect(width, height);
   const fps = 15;
   const nextFrame = 1000 / fps;
-  console.log("nextFrame :>> ", nextFrame);
 
-  console.log("width :>> ", width);
   // make the canvas appear on initial load
   useEffect(() => {
     let timer = 0;
@@ -158,6 +121,6 @@ const Canvas = () => {
     window.addEventListener("resize", handleWindowSizeChange);
   });
 
-  return <canvas id="canvas1" className="canvas" ref={canvasRef} />;
+  return <canvas id="canvas1" className="canvas hidden" ref={canvasRef} />;
 };
 export default Canvas;
