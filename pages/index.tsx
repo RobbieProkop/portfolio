@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
+import Canvas from "../components/Canvas";
 
 import Link from "next/link";
 
@@ -62,6 +63,7 @@ const Home = ({
           <title>{title}</title>
         </Head>
         <Header />
+        <Canvas />
 
         <section id="hero" className="snap-start">
           <Hero pageInfo={pageInfo} />
