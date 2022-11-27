@@ -106,9 +106,14 @@ const Canvas = () => {
   }
 
   const effect = new Effect(width, height);
+  let lastTime = useRef(0);
+  const fps = 30;
+  const nextFrame = 1000 / fps;
+  console.log("nextFrame :>> ", nextFrame);
 
   // make the canvas appear on initial load
   useEffect(() => {
+    let timer = 0;
     handleWindowWidth();
     handleWindowHeight();
     const canvas = canvasRef.current;
@@ -117,14 +122,22 @@ const Canvas = () => {
     canvas.width = width;
     canvas.height = height;
 
-    const animate = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.font = fontSize + "px monospace";
-      effect.symbols.forEach((symbol) => symbol.draw(ctx));
+    const animate = (timeStamp) => {
+      const deltaTime = timeStamp - lastTime.current;
+
+      lastTime.current = timeStamp;
+      if (timer > nextFrame) {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.001)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.font = fontSize + "px monospace";
+        effect.symbols.forEach((symbol) => symbol.draw(ctx));
+        timer = 0;
+      } else {
+        timer += deltaTime;
+      }
       requestAnimationFrame(animate);
     };
-    animate();
+    animate(0);
   });
 
   return <canvas id="canvas1" className="canvas" ref={canvasRef} />;
