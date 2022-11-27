@@ -5,10 +5,8 @@ const Canvas = () => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
-  const handleWindowWidth = () => {
+  const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
-  };
-  const handleWindowHeight = () => {
     setHeight(window.innerHeight);
   };
 
@@ -66,7 +64,7 @@ const Canvas = () => {
       this.text = characters.charAt(
         Math.floor(Math.random() * characters.length)
       );
-      context.fillStyle = "#0aff0a";
+
       context.fillText(
         this.text,
         this.x * this.fontSize,
@@ -106,16 +104,16 @@ const Canvas = () => {
   }
 
   const effect = new Effect(width, height);
-  let lastTime = useRef(0);
-  const fps = 30;
+  const fps = 15;
   const nextFrame = 1000 / fps;
   console.log("nextFrame :>> ", nextFrame);
 
+  console.log("width :>> ", width);
   // make the canvas appear on initial load
   useEffect(() => {
     let timer = 0;
-    handleWindowWidth();
-    handleWindowHeight();
+    let lastTime = 0;
+    handleWindowSizeChange();
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
     ctx.font = fontSize;
@@ -123,12 +121,15 @@ const Canvas = () => {
     canvas.height = height;
 
     const animate = (timeStamp) => {
-      const deltaTime = timeStamp - lastTime.current;
+      const deltaTime = timeStamp - lastTime;
 
-      lastTime.current = timeStamp;
+      lastTime = timeStamp;
       if (timer > nextFrame) {
-        ctx.fillStyle = "rgba(0, 0, 0, 0.001)";
+        ctx.fillStyle = "rgba(0, 0, 0, 0.09)";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.textAlign = "center";
+        ctx.fillStyle = "#04b704df";
+        // ctx.fillStyle = "#0aff0a";
         ctx.font = fontSize + "px monospace";
         effect.symbols.forEach((symbol) => symbol.draw(ctx));
         timer = 0;
@@ -138,6 +139,8 @@ const Canvas = () => {
       requestAnimationFrame(animate);
     };
     animate(0);
+
+    window.addEventListener("resize", handleWindowSizeChange);
   });
 
   return <canvas id="canvas1" className="canvas" ref={canvasRef} />;
