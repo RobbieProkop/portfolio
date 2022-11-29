@@ -83,7 +83,7 @@ const Projects = ({ projects }: Props) => {
           })}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-green-600/10 left-0 h-[400px] -skew-y-12"></div>
+      {/* <div className="w-full absolute top-[30%] bg-green-600/10 left-0 h-[400px] -skew-y-12"></div> */}
     </motion.div>
   );
 };

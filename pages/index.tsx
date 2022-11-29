@@ -73,7 +73,7 @@ const Home = ({
           <WorkExperience experiences={experiences} />
         </section>
 
-        <section id="projects" className="snap-center">
+        <section id="projects" className="snap-center spacer">
           <Projects projects={projects} />
         </section>
 
