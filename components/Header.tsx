@@ -44,17 +44,23 @@ const Header = (props: Props) => {
         }}
         className="flex flex-flex-row items-center cursor-pointer"
       >
+        <Link href="https://drive.google.com/file/d/1_e0LwTBXzcxDUDTL6o62QyrEyVSqg0Xe/view">
+          <a target="_blank">
+            {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
+            <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">Resume</h3>
+          </a>
+        </Link>
         <Link href="#about">
           {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
-          <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">about</h3>
+          <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">About</h3>
         </Link>
         <Link href="#projects">
           <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C] transition-colors">
-            projects
+            Projects
           </h3>
         </Link>
         <Link href="#contact">
-          <h3 className=" text-sm hover:text-[#FBAE3C]">contact</h3>
+          <h3 className=" text-sm hover:text-[#FBAE3C]">Contact</h3>
         </Link>
       </motion.div>
     </header>
