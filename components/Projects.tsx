@@ -26,7 +26,7 @@ const Projects = ({ projects }: Props) => {
         Projects
       </h3>
 
-      <div className="relative max-w-[900px] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80 project-container">
+      <div className="relative height-[600px] max-w-[900px] flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory  z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-green-600/80 project-container">
         {projects
           ?.sort((a, b) => {
             if (a._createdAt < b._createdAt) return -1;
@@ -38,7 +38,7 @@ const Projects = ({ projects }: Props) => {
               useNextSanityImage(configuredSanityClient, project?.image);
             return (
               <div
-                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 h-screen project-card"
+                className="max-w-full flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-36 project-card"
                 key={project._id}
               >
                 <Link
@@ -83,7 +83,7 @@ const Projects = ({ projects }: Props) => {
           })}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-green-600/10 left-0 h-[400px] -skew-y-12"></div>
+      {/* <div className="w-full absolute top-[30%] bg-green-600/10 left-0 h-[400px] -skew-y-12"></div> */}
     </motion.div>
   );
 };

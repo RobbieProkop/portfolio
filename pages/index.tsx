@@ -69,20 +69,20 @@ const Home = ({
           <Hero pageInfo={pageInfo} />
         </section>
 
-        <section id="about" className="snap-center">
-          <About pageInfo={pageInfo} />
-        </section>
-
         <section id="experience" className="snap-center">
           <WorkExperience experiences={experiences} />
         </section>
 
-        <section id="skills" className="snap-start">
-          <Skills skills={skills} />
+        <section id="projects" className="snap-center spacer">
+          <Projects projects={projects} />
         </section>
 
-        <section id="projects" className="snap-center">
-          <Projects projects={projects} />
+        <section id="about" className="snap-center">
+          <About pageInfo={pageInfo} />
+        </section>
+
+        <section id="skills" className="snap-start">
+          <Skills skills={skills} />
         </section>
 
         <section id="contact">

@@ -10,7 +10,8 @@
 
 body {
   font-family: "bluuNext", sans-serif;
-  background-color: rgb(36, 36, 36);
+  // background-color: rgb(36, 36, 36);
+  background-color: #001220;
   // background-image: url("../asset/images/universe.jpeg") no-repeat cover;
   overflow-x: hidden;
 }
@@ -88,6 +89,16 @@ h1 {
   top: 0;
   left: 0;
 }
+
+.spacer {
+  aspect-ratio: 960/540;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../asset/images/blob-1.svg");
+}
+
 // //for marquee text
 // .marquee {
 //   width: 80%;

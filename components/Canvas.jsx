@@ -108,7 +108,7 @@ const Canvas = () => {
         ctx.textAlign = "center";
         ctx.fillStyle = "#04b704df";
         // ctx.fillStyle = "#0aff0a";
-        ctx.font = fontSize + "px monospace";
+        ctx.font = fontSize + "px bluuNext";
         effect.symbols.forEach((symbol) => symbol.draw(ctx));
         timer = 0;
       } else {

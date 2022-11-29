@@ -31,7 +31,7 @@ const ExpCard = ({ experience }: Props) => {
       initial={{ y: 0 }}
       whileHover={{ y: -50 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col rounded-lg justify-center items-center space-y-10 flex-shrink-0 w-full h-[650px] bg-[#292929] px-6 py-8 opacity-50 hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden"
+      className="flex flex-col rounded-lg justify-center items-center space-y-10 flex-shrink-0 w-full h-[650px] bg-[#292929]/40 px-6 py-8 opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden"
     >
       <motion.div
         initial={{ y: -100, opacity: 0 }}
