@@ -22,7 +22,7 @@ const Header = (props: Props) => {
             duration: 1.7,
             type: "spring",
           }}
-          className="hover:text-white cursor-pointer transition-all duration-300 ease-in-out"
+          className="hover:text-[#FBAE3C] cursor-pointer transition-all duration-300 ease-in-out"
         >
           DhammaDevs
         </motion.h3>
@@ -46,15 +46,15 @@ const Header = (props: Props) => {
       >
         <Link href="#about">
           {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
-          <h3 className=" text-sm  pr-3 hover:text-white">about</h3>
+          <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">about</h3>
         </Link>
         <Link href="#projects">
-          <h3 className=" text-sm  pr-3 hover:text-white transition-colors">
+          <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C] transition-colors">
             projects
           </h3>
         </Link>
         <Link href="#contact">
-          <h3 className=" text-sm hover:text-white">contact</h3>
+          <h3 className=" text-sm hover:text-[#FBAE3C]">contact</h3>
         </Link>
       </motion.div>
     </header>

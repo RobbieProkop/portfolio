@@ -87,7 +87,7 @@ const Contact = (props: Props) => {
           />
           <button
             type="submit"
-            className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg hover:grayscale transition-all duration-300 ease-in-out"
+            className="bg-green-600 py-5 px-10 rounded-md text-black font-bold text-lg hover:bg-[#FBAE3C] transition-all duration-300 ease-in-out"
           >
             Submit
           </button>
