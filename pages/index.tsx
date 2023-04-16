@@ -59,6 +59,10 @@ const Home = ({
           <meta name="keywords" content={keywords} />
           <meta name="description" content={description} />
           <meta charSet="utf-8" />
+          <meta
+            name="google-site-verification"
+            content="PsZb7zuNRb_5rmKD6Ney4qFp8irc3YK2GHRikJgsCI8"
+          />
           <link rel="icon" href="/favicon.ico" />
           <title>{title}</title>
         </Head>
