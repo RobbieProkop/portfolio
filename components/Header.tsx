@@ -44,7 +44,7 @@ const Header = (props: Props) => {
         }}
         className="flex flex-flex-row items-center cursor-pointer"
       >
-        <Link href="https://drive.google.com/file/d/1_e0LwTBXzcxDUDTL6o62QyrEyVSqg0Xe/view">
+        <Link href="https://drive.google.com/file/d/10IFbTcLgN0mye6fg4yQeDNiK1TUs5IkV/view?usp=sharing">
           <a target="_blank">
             {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
             <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">Resume</h3>
