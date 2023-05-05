@@ -21,7 +21,7 @@ const Footer = ({ socials }: Props) => {
         />
       ))}
 
-      <Link href="https://drive.google.com/file/d/1_e0LwTBXzcxDUDTL6o62QyrEyVSqg0Xe/view">
+      <Link href="https://flowcv.com/resume/sdqld3o6di">
         <a target="_blank">
           <Image src={cv} alt="cv" height={30} width={30}></Image>
         </a>
