@@ -63,6 +63,7 @@ const Home = ({
             name="google-site-verification"
             content="PsZb7zuNRb_5rmKD6Ney4qFp8irc3YK2GHRikJgsCI8"
           />
+          <meta name="yandex-verification" content="6cc0614d4398f1ac" />
           <link rel="icon" href="/favicon.ico" />
           <title>{title}</title>
         </Head>

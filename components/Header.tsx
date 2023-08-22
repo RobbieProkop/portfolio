@@ -44,7 +44,7 @@ const Header = (props: Props) => {
         }}
         className="flex flex-flex-row items-center cursor-pointer"
       >
-        <Link href="https://drive.google.com/file/d/10IFbTcLgN0mye6fg4yQeDNiK1TUs5IkV/view?usp=sharing">
+        <Link href="https://flowcv.com/resume/sdqld3o6di">
           <a target="_blank">
             {/* <h3 className="hidden md:inline-flex text-sm  pr-3 hover:text-white"> */}
             <h3 className=" text-sm  pr-3 hover:text-[#FBAE3C]">Resume</h3>
