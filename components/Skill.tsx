@@ -21,9 +21,7 @@ const configuredSanityClient = sanityClient({
 const Skill = ({ skill, directionLeft }: Props) => {
   const imageProps = useNextSanityImage(configuredSanityClient, skill.image);
   const { width, height } = useWindowDimensions();
-  console.log("width", width);
   const isMobile = Number(width) < Number(768);
-  console.log("isMobile", isMobile);
 
   return (
     <div className="group relative flex cursor-pointer">
