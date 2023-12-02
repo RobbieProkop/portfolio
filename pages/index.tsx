@@ -64,7 +64,9 @@ const Home = ({
             content="PsZb7zuNRb_5rmKD6Ney4qFp8irc3YK2GHRikJgsCI8"
           />
           <meta name="yandex-verification" content="6cc0614d4398f1ac" />
+          <meta property="og:url" content="https://dhammadevs.com" />
           <link rel="icon" href="/favicon.ico" />
+          <link rel="sitemap" href="/sitemap.xml" />
           <title>{title}</title>
         </Head>
         <Header />
